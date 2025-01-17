@@ -1,6 +1,0 @@
-/vendor/lib/modules/q6_notifier_dlkm.ko: /vendor/lib/modules/q6_pdr_dlkm.ko
-/vendor/lib/modules/q6_pdr_dlkm.ko:
-/vendor/lib/modules/q6_dlkm.ko: /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
-/vendor/lib/modules/apr_dlkm.ko: /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko
-/vendor/lib/modules/snd_event_dlkm.ko:
-/vendor/lib/modules/adsp_loader_dlkm.ko: /vendor/lib/modules/apr_dlkm.ko /vendor/lib/modules/q6_notifier_dlkm.ko /vendor/lib/modules/q6_pdr_dlkm.ko /vendor/lib/modules/snd_event_dlkm.ko

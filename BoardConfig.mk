@@ -27,13 +27,18 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
+TARGET_USES_64_BIT_BINDER := true
+
+# Architecture | apps
+TARGET_SUPPORTS_32_BIT_APPS := true
+TARGET_SUPPORTS_64_BIT_APPS := true
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Bootloader
 TARGET_NO_RADIOIMAGE := true
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := holi
 
 # Display
@@ -60,7 +65,7 @@ BOARD_KERNEL_CMDLINE += \
 	cgroup.memory=nokmem,nosocket \
 	iptable_raw.raw_before_defrag=1 \
 	ip6table_raw.raw_before_defrag=1 \
-	firmware_class.path=/vendor/firmware_mnt/image \
+	firmware_class.path=/vendor/firmware \
 	androidboot.selinux=permissive
 
 # Kernel
@@ -99,13 +104,13 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 0xC800000
 BOARD_ODMIMAGE_PARTITION_SIZE := 0x177000
 
 # Partitions | type
-BOARD_SYSTEMIMAGE_PARTITION_TYPE := erofs
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Partitions | copyout
 TARGET_COPY_OUT_VENDOR := vendor
@@ -146,12 +151,11 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     prism \
     spu \
     persist \
-    sec_efs
+    sec_efs \
+    firmware
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2099-12-31
-PLATFORM_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
-PLATFORM_VERSION := 99.87.36
+PLATFORM_VERSION := 14
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 
 # Verified Boot
@@ -163,11 +167,10 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Encryption & Misc
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
+# TW_INCLUDE_CRYPTO := true
+# TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_METADATA_PARTITION := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
+# BOARD_USES_QCOM_FBE_DECRYPTION := true
 
 # Debug
 TARGET_USES_LOGD := true
@@ -183,8 +186,6 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone4/temp"
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_EXCLUDE_TWRPAPP := true
@@ -197,12 +198,8 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_FASTBOOTD := true
-TW_PREPARE_DATA_MEDIA_EARLY := true
-TW_SKIP_ADDITIONAL_FSTAB := true
-TW_FORCE_KEYMASTER_VER := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko apr_dlkm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko"
+# TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
 # Maintainer/Version
 include $(DEVICE_PATH)/version.mk
