@@ -1,4 +1,4 @@
-## TWRP tree for Samsung Galaxy Tab A9+ 5G (gta9p)
+## TWRP tree for Samsung Galaxy Tab A9+ (gta9pwifi)
 Build your first custom recovery from TeamWin Recovery Project.
 
 ```
