@@ -31,4 +31,5 @@
 /efuse              emmc		/dev/block/bootdevice/by-name/efuse
 
 # External
-/external_sd   vfat        /dev/block/mmcblk1p1    flags=display="Micro SD card";storage;wipeingui;removable
+/external_sd   vfat        /dev/block/mmcblk1p1    flags=display="microSD card";storage;wipeingui;removable
+/usb-otg       vfat        /dev/block/sda1         flags=display="USB-OTG";storage;wipeingui;removable
