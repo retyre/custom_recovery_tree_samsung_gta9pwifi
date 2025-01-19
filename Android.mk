@@ -7,6 +7,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),gta9p)
+ifeq ($(TARGET_DEVICE),gta9pwifi)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
