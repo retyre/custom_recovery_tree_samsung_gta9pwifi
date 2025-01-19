@@ -12,13 +12,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from gta9p device
-$(call inherit-product, device/samsung/gta9p/device.mk)
+# Inherit from gta9pwifi device
+$(call inherit-product, device/samsung/gta9pwifi/device.mk)
 
-PRODUCT_DEVICE := gta9p
-PRODUCT_NAME := twrp_gta9p
+PRODUCT_DEVICE := gta9pwifi
+PRODUCT_NAME := twrp_gta9pwifi
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-X216B
+PRODUCT_MODEL := SM-X210
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
