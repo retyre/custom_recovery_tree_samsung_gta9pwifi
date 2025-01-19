@@ -1,6 +1,6 @@
 ## TWRP tree for Samsung Galaxy Tab A9+ (gta9pwifi)
 
-Decryption disabled, fixed CPU temperature and microSD card mounting
+Decryption disabled; fixed: CPU temperature and external storage mounting
 
 Build your first custom recovery from TeamWin Recovery Project.
 
